@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container mt-5">
+    <div th:if="${mensagem}" th:utext="${mensagem}"></div>
+    <h1>Cadastre-se</h1>
+    <form action="/cadastro" method="post" class="mt-3">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="sp_nome"><i class="fa-solid fa-user"></i></span>
+            <input th:value="${nome}" id="nome" name="nome" type="text" class="form-control" placeholder="Nome" aria-label="Nome"
+                   aria-describedby="sp_nome"/>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="sp_email"><i class="fa-solid fa-envelope"></i></span>
+            <input th:value="${email}" id="email" name="email" type="text" class="form-control" placeholder="E-mail" aria-label="Email"
+                   aria-describedby="sp_email"/>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="sp_cpf"><i class="fa-solid fa-id-card"></i></span>
+                    <input th:value="${cpf}" id="cpf" name="cpf" type="text" class="form-control" placeholder="CPF" aria-label="CPF"
+                           aria-describedby="sp_cpf"/>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="sp_telefone"><i class="fa-solid fa-phone"></i></span>
+                    <input th:value="${telefone}" id="telefone" name="telefone" type="text" class="form-control" placeholder="telefone"
+                           aria-label="Telefone" aria-describedby="sp_telefone"/>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group mb-3">
+
+                    <input th:value="${data_nasc}" id="data_nasc" name="data_nasc" type="date" class="form-control"
+                           placeholder="Data de Nascimento" aria-label="Data de Nascimento"
+                           aria-describedby="sp_data_nasc"/>
+                    <label class="input-group-text" id="sp_data_nasc">Data Nascimento</label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="sp_senha"><i class="fa-solid fa-key"></i></span>
+                    <input id="senha" name="senha" type="password" class="form-control" placeholder="Senha"
+                           aria-label="Senha" aria-describedby="sp_senha"/>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="sp_confsenha"><i class="fa-solid fa-key"></i></span>
+                    <input id="confsenha" name="confsenha" type="password" class="form-control"
+                           placeholder="Confirmação Senha" aria-label="ConfirmaSenha" aria-describedby="sp_confsenha"/>
+                </div>
+            </div>
+            <div class="col-sm-12 text-right">
+                <input value="Cadastrar" type="submit" class="btn btn-primary"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
